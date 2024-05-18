@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+@import "./vars.scss";
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: $primary;
+  // width: 100%;
+  // height: 100%;
+}
+nav {
+  padding: 0 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  ul {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+
+    list-style: none;
+
+    li {
+      width: 120px;
+      height: 100%;
+
+      display: grid;
+      place-items: center;
+      h1 {
+        font-family: "Caveat", cursive;
+        font-size: 60px;
+      }
+      .search-icon {
+        position: absolute;
+        height: 20px;
+        left: 15px;
+        fill: $white;
+      }
+
+      &:nth-child(2) {
+        position: relative;
+        flex-grow: 1;
+        max-width: calc(220px * 4 + 400px + 350px);
+
+        input {
+          width: 100%;
+          border: 2px solid $white;
+          background-color: transparent;
+          height: 60px;
+          border-radius: $b-small;
+          font-size: 16px;
+          text-indent: 40px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  /////////Slider
+  .theme-switch-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .theme-slider {
+    display: inline-block;
+    height: 45px;
+    position: relative;
+    width: 80px;
+  }
+
+  .theme-slider input {
+    display: none;
+  }
+
+  .slider {
+    background-color: $blue;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    background-color: $white;
+    bottom: 4px;
+    content: "";
+    height: 36px;
+    left: 4px;
+    position: absolute;
+    transition: 0.2s;
+    width: 36px;
+  }
+
+  input:checked + .slider {
+    background-color: $red;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(
+      35px
+    ); //	Selects the first .slider element that is placed immediately after input: elements
+  }
+  input:checked {
+    background-color: #000;
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+main {
+  width: 100%;
+  margin-top: 120px;
+  display: grid;
+  place-items: center;
+  padding: 20px 0px;
+  height: calc(100vh - 120px); //fix this
+  .container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 220px 220px 220px 400px 350px;
+    grid-template-rows: 28vh 28vh 28vh;
+    width: 100%;
+    max-width: calc(220px * 4 + 400px + 350px);
+    height: 100%;
+    .main-info,
+    .forecast,
+    .conditions,
+    .future {
+      border: 2px solid $white;
+      height: 100%;
+      width: 100%;
+      border-radius: $b-big;
+      position: relative;
+    }
+    .main-info {
+      grid-column: 1 / span 4;
+      grid-row: 1 / span 2;
+
+      article {
+        padding: 40px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center; //only because of image
+        div {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          h3 {
+            margin-bottom: auto; //I think this is the easiest way of doing stuff
+          }
+        }
+        h1 {
+          font-size: 70px;
+        }
+        img {
+          width: 400px;
+          height: 400px;
+
+          margin-left: auto;
+        }
+      }
+    }
+    .forecast {
+      grid-column: 5 / span 6;
+      grid-row: 1 / span 3;
+
+      article {
+        padding: 20px 40px;
+        max-height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        h1 {
+          font-size: 30px;
+        }
+
+        .time-container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          justify-content: space-between;
+          border-bottom: 2px solid $white;
+          margin-top: 10px;
+          h3:nth-child(2) {
+            margin-right: auto;
+          }
+        }
+      }
+    }
+    .conditions {
+      grid-column: 1 / span 3;
+      grid-row: 3;
+      padding: 20px 40px;
+      h1 {
+        font-size: 30px;
+      }
+      .align {
+        margin-top: 30px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      article {
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 140px;
+        column-gap: 100px;
+
+        .details {
+          width: fit-content;
+          display: flex;
+          justify-content: flex-start;
+          gap: 10px;
+
+          svg {
+            width: 30px;
+            height: 30px;
+            path {
+              border: $blue;
+              stroke: $blue;
+            }
+          }
+        }
+        h1 {
+          font-size: 40px;
+        }
+      }
+    }
+    .future {
+      grid-row: 3;
+      padding: 20px 40px;
+      article {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+        .nav-days {
+          display: flex;
+          justify-content: space-between;
+        }
+        h1 {
+          font-size: 30px;
+        }
+        section {
+          align-self: center;
+          img {
+            width: 200px;
+            margin-bottom: 30px; //temporary fix, this can be written more beatufully
+          }
+        }
+      }
+
+      svg {
+        cursor: pointer;
+        fill: $red;
+        width: 40px;
+        height: 40px;
+
+        &:active {
+          scale: 0.9;
+        }
+      }
+      .next {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  nav {
+    background-color: $primary !important;
+    z-index: 1;
+    padding: 0 10px !important;
+
+    li {
+      width: fit-content !important;
+    }
+    // padding: 0px 20px;
+    h1 {
+      font-size: 35px !important; //!important because I didn't nest all the layers because I think it is unecessary
+    }
+    input {
+      font-size: 12px !important;
+      height: 50px !important;
+    }
+
+    .theme-switch-container {
+      justify-content: flex-end;
+      zoom: 0.7;
+    }
+  }
+
+  main {
+    padding: 0px !important;
+
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      width: 90% !important;
+      padding: 0px !important;
+
+      .main-info {
+        min-height: 400px;
+        h1 {
+          font-size: 50px !important;
+        }
+        h3 {
+          margin-top: 10px;
+        }
+        img {
+          width: 150px !important;
+          height: 150px !important;
+        }
+      }
+      .forecast {
+        max-height: 400px;
+      }
+      .conditions {
+        article {
+          zoom: 0.75;
+          column-gap: 40px;
+
+          h2 {
+            font-size: 20px;
+          }
+        }
+      }
+      .future {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1200px) {
+  body {
+    nav {
+      zoom: 0.8 !important;
+      li {
+        width: fit-content;
+      }
+    }
+    main {
+      margin-top: 150px;
+      zoom: 0.6;
+      .container {
+        grid-template-rows: 250px 250px 250px;
+
+        .main-info,
+        .forecast,
+        .future,
+        .conditions {
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  body {
+    nav {
+      zoom: 0.8 !important;
+      li {
+        width: fit-content;
+      }
+    }
+    main {
+      margin-top: 120px;
+      zoom: 0.75;
+      .container {
+        grid-template-rows: 290px 290px 290px;
+
+        .main-info,
+        .forecast,
+        .future,
+        .conditions {
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+}
+.dark {
+  background-color: #000 !important;
+}
