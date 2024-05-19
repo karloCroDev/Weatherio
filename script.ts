@@ -45,11 +45,11 @@ class App {
   #val: boolean | string = false;
   #count: number = 1;
   constructor() {
-    // navigator.geolocation.getCurrentPosition(
-    //   this.#success.bind(this),
-    //   this.#reject
-    // );
-    // setTimeout(() => this.#fetchWeather(), 500) //I did this because when I did this immediattley it would fire off wrong region
+    navigator.geolocation.getCurrentPosition(
+      this.#success.bind(this),
+      this.#reject
+    );
+    setTimeout(() => this.fetchWeather(), 500); //I did this because when I did this immediattley it would fire off wrong region
     this.#search();
   }
 

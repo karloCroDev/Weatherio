@@ -106,17 +106,17 @@ nav {
     right: 0;
     top: 0;
     transition: 0.4s;
-  }
 
-  .slider:before {
-    background-color: $white;
-    bottom: 4px;
-    content: "";
-    height: 36px;
-    left: 4px;
-    position: absolute;
-    transition: 0.2s;
-    width: 36px;
+    &:before {
+      background-color: $white;
+      bottom: 4px;
+      content: "";
+      height: 36px;
+      left: 4px;
+      position: absolute;
+      transition: 0.2s;
+      width: 36px;
+    }
   }
 
   input:checked + .slider {
@@ -134,10 +134,10 @@ nav {
 
   .slider.round {
     border-radius: 34px;
-  }
 
-  .slider.round:before {
-    border-radius: 50%;
+    &::before {
+      border-radius: 50%;
+    }
   }
 }
 

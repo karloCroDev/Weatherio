@@ -55,11 +55,8 @@ class App {
         _App_instances.add(this);
         _App_val.set(this, false);
         _App_count.set(this, 1);
-        // navigator.geolocation.getCurrentPosition(
-        //   this.#success.bind(this),
-        //   this.#reject
-        // );
-        // setTimeout(() => this.#fetchWeather(), 500) //I did this because when I did this immediattley it would fire off wrong region
+        navigator.geolocation.getCurrentPosition(__classPrivateFieldGet(this, _App_instances, "m", _App_success).bind(this), __classPrivateFieldGet(this, _App_instances, "m", _App_reject));
+        setTimeout(() => this.fetchWeather(), 500); //I did this because when I did this immediattley it would fire off wrong region
         __classPrivateFieldGet(this, _App_instances, "m", _App_search).call(this);
     }
     fetchWeather() {
