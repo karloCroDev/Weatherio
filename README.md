@@ -6,8 +6,9 @@
 Welcome to the Weather App! This application provides real-time weather information for any specified location. Additionally, it can detect the user's current location using the Geolocation API and display the local weather data upon loading the website. Whether you want to know the weather for your travel destination or simply check the forecast for your current location, this app has you covered.
 Also this app is mobile responsive, so you can use it freely on any device (see the following images)
 
-Note: The reason you only see two commits is that I accidentally used a force push :), which erased all my previous commits. I was only able to restore two commits locally because I was working on a different computer. That's why there are only two commits visible now.
-
+Notes: 
+- The reason you only see two commits is that I accidentally used a force push :), which erased all my previous commits. I was only able to restore two commits locally because I was working on a different computer. That's why there are only two commits visible now.
+- When you search cities, just press enter after you type desired word or click the search icon 
 This website is mobile responsive (see in the images bellow)
 
 ![image](https://github.com/karloCroDev/Weatherio/assets/117281346/709050a2-3014-4a0c-a190-2015ed6244d8)
