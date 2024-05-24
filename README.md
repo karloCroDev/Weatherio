@@ -9,7 +9,7 @@ Also this app is mobile responsive, so you can use it freely on any device (see 
 Notes: 
 - The reason you only see two commits is that I accidentally used a force push :), which erased all my previous commits. I was only able to restore two commits locally because I was working on a different computer. That's why there are only two commits visible now.
 - When you search cities, just press enter after you type desired word or click the search icon 
-- This website is mobile responsive (see in the images bellow)
+- This website is mobile responsive (see the images bellow)
 
 ![image](https://github.com/karloCroDev/Weatherio/assets/117281346/709050a2-3014-4a0c-a190-2015ed6244d8)
 ![image](https://github.com/karloCroDev/Weatherio/assets/117281346/c7dfa1cd-cd62-4b76-9d29-d85d10ee3351)
