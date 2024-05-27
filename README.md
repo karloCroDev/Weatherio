@@ -26,7 +26,7 @@ Notes:
 - [TypeScript](https://www.typescriptlang.org/)  - is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale. It adds static types to JavaScript, which helps in catching errors early during development and improves overall code quality.
 
 **Getting started**
- - I hosted the app using Vercel, so feel free to check it out  👉[Weatherio](https://weather-rnb3wge5m-karlos-projects-42cba8bf.vercel.app/)
+ - I hosted the app using Vercel, so feel free to check it out  👉[Weatherio](https://weather-app-eta-fawn.vercel.app/)
  - I haven't used any extra dependencies (I wanted to make things as simple as possible), so all you have to do is to clone this project if you want to run it locally 
  - `git clone "https://github.com/karloCroDev/Weatherio.git"`
 
